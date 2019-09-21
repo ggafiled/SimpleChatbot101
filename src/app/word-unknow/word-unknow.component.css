@@ -1,0 +1,9 @@
+html{
+    padding: 20px 20px 20px 20px;
+}
+body{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Athiti', sans-serif !important;
+    padding-top: 15%;
+}

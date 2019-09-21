@@ -1,0 +1,68 @@
+<style>
+  .card{
+    font-family: 'Athiti', sans-serif !important;
+}
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 5px;
+  }
+  .card-title{
+    flex-flow: column;
+  }
+
+  .card-button {
+    display: flex;
+    flex: 1;
+    right: 12px;
+    top: 18px;
+    font-size: 20px;
+    color: #F3F3F3;
+  
+  }
+
+  .card-button .fa{
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
+  .card-button .fa-ban:hover {
+    color: tomato;
+  }
+
+  .card-button .fa-tag:hover {
+    color: #03A980;
+  }
+
+  .warning{
+    background-color: #ffccbc !important;
+  }
+
+</style>
+<script type="text/javascript">
+
+  var app = angular.module('wordApp',[]);
+
+  app.controller('wordController',function($scope){
+      $scope.IsVisible = false;
+
+      $scope.ShowHide = function(){
+          $scope.IsVisible = true;
+      }
+      });
+</script>
+<div *ngIf="!isHide" class="card border-dark shadow-lg p-3 mb-5 bg-white rounded {{word.block==true?'warning':''}}" style="max-width: 18rem;border: none;">
+  <div class="card-body text-dark">
+    <div class="crad-header ml-auto">
+        <h5 class="card-title" style="float: left;">คำที่ไม่รู้จัก</h5>
+        <div class="card-button" style="float: right;">
+          <i class="fa fa-tag" title="Add" (click)="updateToAdd(word);"></i>
+          <i class="fa fa-ban" title="Block" (click)="close();" ></i>
+        </div>
+    </div>
+    <p class="card-text" style="clear: left;">{{word.word}}</p>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<style>
+  .container {
+    padding: 30px;
+  }
+
+</style>
+
+<div class="container">
+  <div id="card" *ngFor="let u of appservice.document">
+    <app-word-unknow-card [word]=u></app-word-unknow-card>
+  </div>
+</div>
+
+<script>
+  var myPr = angular.module('myPr', []);
+
+  myPr.controller("TodosController", function ($scope, $http, $timeout) {
+
+    $scope.reload = function () {
+      $http.get('http://project-bot-01.herokuapp.com/bot/getwordunknow').
+      success(function (data) {
+        $scope.todos = data.todos;
+      });
+    }
+    $scope.reload();
+    $interval($scope.reload, 5000);
+  });
+
+</script>

@@ -1,0 +1,20 @@
+body{
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Athiti', sans-serif !important;
+}
+.navbar-custom {
+    -webkit-box-shadow: 0 8px 10px -6px #EFF0F1 !important;
+    -moz-box-shadow: 0 8px 10px -6px #EFF0F1 !important;
+    box-shadow: 0 8px 6px -3px #EFF0F1 !important;
+    max-height: 64px;
+    font-family: 'Athiti', sans-serif !important;
+ 
+}
+.navbar-custom ul:first-child { float: left; }
+.navbar-custom ul { 
+    right: 0px;
+    list-style:none;
+    margin:10px;
+    float: right; 
+  }
+
